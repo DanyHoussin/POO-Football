@@ -33,60 +33,57 @@ $joueur1 = new Player("Killian", "Mbappe", "2024-02-23", $country1);
 $joueur2 = new Player("Cristiano", "Ronaldo", "2024-02-23", $country5);
 $joueur3 = new Player("Lionel", "Messi", "2024-02-23", $country5);
 $joueur4 = new Player("Neymar", "Junior", "2024-02-23", $country5);
-
-
-
-
-// echo $hotel1->getHotelName()."<br>";
-
-// echo $hotel1->displayBedrooms()."<br>";
-
-// echo $hotel1->displayReservation()."<br>";
-// echo $hotel2->displayReservation()."<br>";
-
-// echo $client1->displayReservation()."<br>";
-
-// echo $client2->displayReservation()."<br>";
-
-// echo $hotel1->displayArrayReservation()."<br>";
-
 ?>
+
+
     <main>
         <div class="containerCountry">
-            <div class="cardCountry">
-                <article class="card-textCountry">
-                    <h4><?php echo $country1->getName();?></h4>
-                    <p><?php echo $country1->displayTeams();?>          </p>
-                </article>
-            </div>
-            <div class="cardCountry">
-                <article class="card-textCountry">
-                    <h4><?php echo $country2->getName();?></h4>
-                    <p><?php echo $country2->displayTeams();?>          </p>
-                </article>
-            </div>
-            <div class="cardCountry">
-                <article class="card-textCountry">
-                    <h4><?php echo $country3->getName();?></h4>
-                    <p><?php echo $country3->displayTeams();?>          </p>
-                </article>
-            </div>
-            <div class="cardCountry">
-                <article class="card-textCountry">
-                    <h4><?php echo $country4->getName();?></h4>
-                    <p><?php echo $country4->displayTeams();?>          </p>
-                </article>
-            </div>
-            <div class="cardCountry">
-                <article class="card-textCountry">
-                    <h4><?php echo $country5->getName();?></h4>
-                    <p><?php echo $country5->displayTeams();?>          </p>
-                </article>
-            </div>
+            <?php echo $country1->displayInfo()."<br>";
+            echo $country2->displayInfo()."<br>";
+            echo $country3->displayInfo()."<br>";
+            echo $country4->displayInfo()."<br>";
+            echo $country5->displayInfo()."<br>";?>
         </div>
-        <?php 
-        echo d ;
-        ?>
     </main>
 </body>
 </html>
+
+
+
+
+
+
+<!-- Brouillon -->
+
+
+
+<!-- <div class="cardCountry">
+    <article class="card-textCountry">
+        <h4> < ?php echo $country1->getName();?></h4>
+        <p> < ?php echo $country1->displayTeams();?>          </p>
+    </article>
+</div>
+<div class="cardCountry">
+    <article class="card-textCountry">
+        <h4> < ?php echo $country2->getName();?></h4>
+        <p> < ?php echo $country2->displayTeams();?>          </p>
+    </article>
+</div>
+<div class="cardCountry">
+    <article class="card-textCountry">
+        <h4> < ?php echo $country3->getName();?></h4>
+        <p> < ?php echo $country3->displayTeams();?>          </p>
+    </article>
+</div>
+<div class="cardCountry">
+    <article class="card-textCountry">
+        <h4> < ?php echo $country4->getName();?></h4>
+        <p> < ?php echo $country4->displayTeams();?>          </p>
+    </article>
+</div>
+<div class="cardCountry">
+    <article class="card-textCountry">
+        <h4> < ?php echo $country5->getName();?></h4>
+        <p> < ?php echo $country5->displayTeams();?>          </p>
+    </article>
+</div> -->

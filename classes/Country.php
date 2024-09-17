@@ -37,7 +37,15 @@ class Country {
     }
 
     public function displayInfo(){
-        
+        $result = '<div class="cardCountry"><br>';
+        $result .= '<article class="card-textCountry"><br>';
+        $result .= '<h4>'.$this->getName().'</h4>';
+        foreach($this->teams as $team) {
+            $result .= '<p>'.$team->getName().'</p>';
+        }
+        $result .= '</article><br>';
+        $result .= '</div><br>';
+        return $result;
     }
 
 
