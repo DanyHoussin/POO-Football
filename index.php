@@ -22,29 +22,64 @@ $country3 = new Country("Angleterre");
 $country4 = new Country("Italie");
 $country5 = new Country("Portugal");
 
-$teams1 = new Team("PSG", $country1);
-$teams2 = new Team("Racing Club Stras", $country1);
-$teams3 = new Team("FC Barcelone", $country2);
-$teams4 = new Team("Juventus", $country4);
-$teams5 = new Team("Manchester United", $country3);
-$teams6 = new Team("Real Madrid", $country2);
+$team1 = new Team("PSG", $country1, "1970-08-12");
+$team2 = new Team("Racing Club Stras", $country1, "1906-06-10");
+$team3 = new Team("FC Barcelone", $country2, "1899-11-19");
+$team4 = new Team("Juventus", $country4, "1897-11-01");
+$team5 = new Team("Manchester United", $country3, "1878-01-01");
+$team6 = new Team("Real Madrid", $country2, "1902-03-06");
 
-$joueur1 = new Player("Killian", "Mbappe", "2024-02-23", $country1);
-$joueur2 = new Player("Cristiano", "Ronaldo", "2024-02-23", $country5);
-$joueur3 = new Player("Lionel", "Messi", "2024-02-23", $country5);
-$joueur4 = new Player("Neymar", "Junior", "2024-02-23", $country5);
+$player1 = new Player("Kylian", "Mbappé", "1998-12-20", $country1);
+$player2 = new Player("Cristiano", "Ronaldo", "1985-02-5", $country5);
+$player3 = new Player("Lionel", "Messi", "1987-06-24", $country5);
+$player4 = new Player("Neymar", "Junior", "1992-02-5", $country5);
+
+$career1 = new Career($player1, $team1, "2017");
+
+// $joueur1->addTeamsCareer($team1);
+
+// $joueur2->addTeamsCareer($team6);
+// $joueur2->addTeamsCareer($team4);
+// $joueur2->addTeamsCareer($team5);
+
+// $joueur3->addTeamsCareer($team3);
+// $joueur3->addTeamsCareer($team1);
+
+// $joueur4->addTeamsCareer($team3);
+// $joueur4->addTeamsCareer($team1);
 ?>
 
-
+<div id="wrapper">
     <main>
         <div class="containerCountry">
-            <?php echo $country1->displayInfo()."<br>";
+            <?php 
+            echo $country1->displayInfo();
             echo $country2->displayInfo()."<br>";
             echo $country3->displayInfo()."<br>";
             echo $country4->displayInfo()."<br>";
-            echo $country5->displayInfo()."<br>";?>
+            echo $country5->displayInfo()."<br>";
+            ?>
+        </div>
+        <div class="containerTeam">
+            <?php 
+            echo $team1->displayInfo()."<br>";
+            echo $team2->displayInfo()."<br>";
+            echo $team3->displayInfo()."<br>";
+            echo $team4->displayInfo()."<br>";
+            echo $team5->displayInfo()."<br>";
+            echo $team6->displayInfo()."<br>";
+            ?>
+        </div>
+        <div class="containerPlayer">
+            <?php 
+            echo $player1->displayInfo()."<br>";
+            echo $player2->displayInfo()."<br>";
+            echo $player3->displayInfo()."<br>";
+            echo $player4->displayInfo()."<br>";
+            ?>
         </div>
     </main>
+</div>
 </body>
 </html>
 

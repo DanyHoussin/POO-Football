@@ -1,39 +1,32 @@
 <?php
 
 
-class Country {
+class Career {
 
-    private string $_name;
-    private array $player;
-    private array $teams;
+    private Player $_player;
+    private Team $_team;
+    private string $_enterDate;
 
 
-    public function __construct(string $name) {
-        $this->_name = $name;
-        $this->players = array();
-        $this->teams = array();
+    public function __construct(Player $player, Team $team, string $enterDate) {
+        $this->_player = $player;
+        $this->_team = $team;
+        $this->_enterDate = $enterDate;
+        $team->addPlayer($this->_player);
     }
 
     public function getName() {
         return $this->_name;
     }
 
-
     public function setName(string $name) {
         $this->_name = $name;
     }
 
-    public function addPlayer(Player $player){
-        $this->players[] = $player;
-    }
-    public function addTeam(Team $team){
-        $this->teams[] = $team;
-    }
-    
-    public function displayTeams(){
-        foreach($this->teams as $team) {
-            echo $team->getName()."<br>";
-        }
+
+    public function addTeamsCareer(Team $team){
+        $this->teamsCareer[] = $team;
+        $team->addPlayer($this);
     }
 
     public function displayInfo(){
