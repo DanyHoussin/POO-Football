@@ -18,10 +18,10 @@ class Country {
         return $this->_name;
     }
 
-
     public function setName(string $name) {
         $this->_name = $name;
     }
+
 
     public function addPlayer(Player $player){
         $this->players[] = $player;
@@ -38,15 +38,18 @@ class Country {
 
     public function displayInfo(){
         $result = '<div class="cardCountry">';
-        $result .= '<h4>'.$this->getName().'</h4>';
+        $result .= '<h4>'.$this.'</h4>';
         $result .= '<article class="card-textCountry">';
         foreach($this->teams as $team) {
-            $result .= '<p><small>'.$team->getName().'</small></p>';
+            $result .= '<p><small>'.$team.'</small></p>';
         }
         $result .= '</article><br>';
-        $result .= '</div><br>';
+        $result .= '</div>';
         return $result;
     }
 
+    public function __toString() {
+        return $this->getName();
+    }
 
 }

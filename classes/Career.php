@@ -12,33 +12,28 @@ class Career {
         $this->_player = $player;
         $this->_team = $team;
         $this->_enterDate = $enterDate;
-        $team->addPlayer($this->_player);
-    }
-
-    public function getName() {
-        return $this->_name;
-    }
-
-    public function setName(string $name) {
-        $this->_name = $name;
-    }
-
-
-    public function addTeamsCareer(Team $team){
-        $this->teamsCareer[] = $team;
         $team->addPlayer($this);
+        $player->addTeamsCareer($this);
     }
 
-    public function displayInfo(){
-        $result = '<div class="cardCountry">';
-        $result .= '<h4>'.$this->getName().'</h4>';
-        $result .= '<article class="card-textCountry">';
-        foreach($this->teams as $team) {
-            $result .= '<p><small>'.$team->getName().'</small></p>';
-        }
-        $result .= '</article><br>';
-        $result .= '</div><br>';
-        return $result;
+    public function getPlayer() {
+        return $this->_player;
+    }
+    public function getTeam() {
+        return $this->_team;
+    }
+    public function getEnterDate() {
+        return $this->_enterDate;
+    }
+
+    public function setPlayer(Player $player) {
+        $this->_player = $player;
+    }
+    public function setTeam(Team $team) {
+        $this->_team = $team;
+    }
+    public function setEnterDate(string $enterDate) {
+        $this->_enterDate = $enterDate;
     }
 
 

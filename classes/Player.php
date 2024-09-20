@@ -48,9 +48,8 @@ class Player {
     }
     
 
-    public function addTeamsCareer(Team $team){
+    public function addTeamsCareer($team){
         $this->teamsCareer[] = $team;
-        $team->addPlayer($this);
     }
     public function getAge() {
         $date = new DateTime();
@@ -61,10 +60,10 @@ class Player {
     public function displayInfo(){
         $result = '<div class="cardPlayer">';
         $result .= '<h4>'.$this.'</h4>';
-        $result .= '<p><small>'.$this->getNationality()->getName().' - '.$this->getAge().' ans</small></p>';
+        $result .= '<p><small>'.$this->getNationality().' - '.$this->getAge().' ans</small></p>';
         $result .= '<article class="card-textPlayer">';
-        foreach($this->teamsCareer as $team) {
-            $result .= '<p><small>'.$team->getName().'</small></p>';
+        foreach($this->teamsCareer as $career) {
+            $result .= '<p><small>'.$career->getTeam().' ('.$career->getEnterDate().')</small></p>';
         }
         $result .= '</article><br>';
         $result .= '</div>';

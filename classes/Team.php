@@ -6,13 +6,14 @@ class Team {
     private string $_name;
     private Country $_country;
     private DateTime $_creationDate;
-    private array $players = array();
+    private array $players;
 
 
     public function __construct(string $name, Country $country, string $creationDate) {
         $this->_name = $name;
         $this->_country = $country;
         $this->_creationDate = new DateTime($creationDate);
+        $this->players = array()
         $country->addTeam($this);
     }
 
@@ -38,22 +39,26 @@ class Team {
     }
 
 
-    public function addPlayer(Player $player){
+    public function addPlayer($player){
         $this->players[] = $player;
     }
     
 
     public function displayInfo(){
         $result = '<div class="cardTeam">';
-        $result .= '<h4>'.$this->getName().'</h4>';
-        $result .= '<p><small>'.$this->getCountry()->getName().' - '.$this->getCreationDate()->format('Y').'</small></p>';
+        $result .= '<h4>'.$this.'</h4>';
+        $result .= '<p><small>'.$this->getCountry().' - '.$this->getCreationDate()->format('Y').'</small></p>';
         $result .= '<article class="card-textTeam">';
-        foreach($this->players as $player) {
-            $result .= '<p><small>'.$player.'</small></p>';
+        foreach($this->players as $career) {
+            $result .= '<p><small>'.$career->getPlayer().' ('.$career->getEnterDate().')</small></p>';
         }
         $result .= '</article><br>';
-        $result .= '</div><br>';
+        $result .= '</div>';
         return $result;
+    }
+
+    public function __toString() {
+        return $this->getName();
     }
 
 }
